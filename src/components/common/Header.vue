@@ -4,13 +4,14 @@
 <template>
     <header>
         <ul>
+            <li>
+                <p>
+                    Pages Visited: {{ pagesVisited }} - <span @click="resetCounter">Reset</span>
+                </p>
+            </li>
+            <br />
             <li v-for="link in links">
                 <router-link :to="link.path">{{ link.name }}</router-link>
-                <li>
-                    <p>
-                        Pages Visited: {{ pagesVisited }}
-                    </p>
-                </li>
             </li>
         </ul>
     </header>
@@ -25,7 +26,8 @@
             return {
                 links: [
                     { path: '/', name: 'Home' },
-                    { path: '/about', name: 'About' }
+                    { path: '/about', name: 'About' },
+                    { path: '/contact', name: 'Contact' }
                 ]
             }
         },
@@ -33,9 +35,12 @@
             pagesVisited() {
                 return store.state.count
             }
+        },
+        methods: {
+            resetCounter() { store.commit('reset') }
         }
     }
-    
+
 </script>
 
 <style lang="scss" scoped>
@@ -51,6 +56,15 @@
                     padding: 0px 10px;
                     text-decoration: none;
                     &:hover {
+                        color: black;
+                    }
+                }
+                p {
+                    font-size: 12px;
+                    color: gray;
+                    &:hover { color: gray; }
+                    span {
+                        cursor: pointer;
                         color: black;
                     }
                 }
