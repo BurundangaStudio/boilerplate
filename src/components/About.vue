@@ -17,9 +17,15 @@
         methods: {
             // enterTransition(el, done) {
             //     console.log('entro about')
+            //     setTimeout(() => {
+            //         done
+            //     }, 2500)
             // },
             // leaveTransition(el, done) {
             //     console.log('salgo about')
+            //     setTimeout(() => {
+            //         done
+            //     }, 2500)
             // }
         }
     }
@@ -27,7 +33,6 @@
 
 <style lang="scss" scoped>
     .about {
-        display: block;
         h1 {
             color:red;
         }

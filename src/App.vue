@@ -1,7 +1,14 @@
 <template>
     <div id="app">
         <header-component></header-component>
-        <transition name="transition" v-on:enter="enterTransition" v-on:leave="leaveTransition">
+        <transition
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:leave="leave"
+            v-bind:css="false"
+            mode="out-in"
+            appear
+        >
             <router-view></router-view>
         </transition>
     </div>
@@ -9,22 +16,24 @@
 
 <script>
 
+import { TweenMax } from 'gsap'
 import HeaderComponent from './components/common/Header'
 
 export default {
     name: 'app',
-    methods: {
-        enterTransition(el, done) {
-            console.log(el)
-            done()
-        },
-        leaveTransition(el, done) {
-            console.log(el)
-            done()
-        }
-    },
     components: {
         HeaderComponent
+    },
+    methods: {
+        beforeEnter(el) {
+            TweenMax.set(el, { opacity: 0, y: 50 })
+        },
+        enter(el, done) {
+            TweenMax.to(el, 0.5, { opacity: 1, y: 0, onComplete: () => { done() } })
+        },
+        leave(el, done) {
+            TweenMax.to(el, 0.5, { opacity: 0, y: 50, onComplete: () => { done() } })
+        }
     }
 }
 

@@ -17,6 +17,9 @@
                     { path: '/about', name: 'About' }
                 ]
             }
+        },
+        mounted() {
+
         }
     }
 </script>
