@@ -11,6 +11,14 @@
             return {
                 msg: 'This is the home section'
             }
+        },
+        methods: {
+            // enterTransition(el, done) {
+            //     console.log('entro home')
+            // },
+            // leaveTransition(el, done) {
+            //     console.log('salgo home')
+            // }
         }
     }
 </script>

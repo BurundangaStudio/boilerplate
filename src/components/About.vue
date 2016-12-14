@@ -1,15 +1,10 @@
 <template>
-    <transition v-on:enter="enterTransition" v-on:leave="leaveTransition">
-        <div class="about" id="about">
-            <h1>{{ msg }}</h1>
-        </div>
-    </transition>
+    <div class="about" id="about">
+        <h1>{{ msg }}</h1>
+    </div>
 </template>
 
 <script>
-
-    import { TweenMax } from 'gsap'
-
     export default {
         name: 'about',
         data() {
@@ -18,27 +13,14 @@
             }
         },
         mounted() {
-            this.$nextTick(() => {
-                TweenMax.to(this.$el, 1, { autoAlpha: 1, delay: 1 })
-            })
         },
         methods: {
-            enterTransition(el, done) {
-                TweenMax.from(this.$el, 1, {
-                    autoAplha: 0,
-                    onComplete: () => {
-                        done()
-                    }
-                })
-            },
-            leaveTransition(el, done) {
-                TweenMax.to(this.$el, 1, {
-                    autoAplha: 0,
-                    onComplete: () => {
-                        done()
-                    }
-                })
-            }
+            // enterTransition(el, done) {
+            //     console.log('entro about')
+            // },
+            // leaveTransition(el, done) {
+            //     console.log('salgo about')
+            // }
         }
     }
 </script>
