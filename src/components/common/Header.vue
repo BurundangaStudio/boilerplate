@@ -13,13 +13,10 @@
         data() {
             return {
                 links: [
-                    { path: '/home', name: 'Home' },
+                    { path: '/', name: 'Home' },
                     { path: '/about', name: 'About' }
                 ]
             }
-        },
-        mounted() {
-
         }
     }
 </script>

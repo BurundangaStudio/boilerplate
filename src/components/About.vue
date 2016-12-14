@@ -17,6 +17,10 @@
 
 <style lang="scss" scoped>
     .about {
+        opacity: 0;
+        transform: translateY(150px);
+        -webkit-transform: translateY(150px);
+        -moz-transform: translateY(150px);
         h1 {
             color:red;
         }

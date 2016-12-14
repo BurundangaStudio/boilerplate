@@ -23,7 +23,7 @@ const routes = [
         path: '/',
         component: App,
         children: [
-            { path: '/home', component: Home },
+            { path: '/', component: Home },
             { path: '/about', component: About }
         ]
     }

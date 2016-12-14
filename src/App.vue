@@ -2,14 +2,13 @@
     <div id="app">
         <header-component></header-component>
         <transition
-            v-on:before-enter="beforeEnter"
-            v-on:enter="enter"
-            v-on:leave="leave"
-            v-bind:css="false"
+            @enter="enter"
+            @leave="leave"
+            :css="false"
             mode="out-in"
             appear
         >
-            <router-view :enter="enterVal"></router-view>
+            <router-view ref="page"></router-view>
         </transition>
     </div>
 </template>
@@ -21,22 +20,14 @@ import HeaderComponent from './components/common/Header'
 
 export default {
     name: 'app',
-    data() {
-        return {
-            enterVal: true
-        }
-    },
     methods: {
-        beforeEnter(el) {
-            TweenMax.set(el, { opacity: 0, y: 50 })
-        },
         enter(el, done) {
-            console.log(el)
-            this.enterVal = true
-            TweenMax.to(el, 0.5, { opacity: 1, y: 0, onComplete: () => { done() } })
+            if (this.$refs.page.enter) this.$refs.page.enter(el, done)
+            else TweenMax.to(el, 0.5, { opacity: 1, y: 0, onComplete: done })
         },
         leave(el, done) {
-            TweenMax.to(el, 0.5, { opacity: 0, y: 50, onComplete: () => { done() } })
+            if (this.$refs.page.leave) this.$refs.page.leave(el, done)
+            else TweenMax.to(el, 0.5, { opacity: 0, y: 50, onComplete: done })
         }
     },
     components: {
