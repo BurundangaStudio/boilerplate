@@ -1,3 +1,6 @@
+//
+//  Home.vue
+
 <template>
     <div class="home" id="home">
         <h1>{{ msg }}</h1>
@@ -12,18 +15,15 @@
         name: 'home',
         data() {
             return {
-                msg: 'This is the home section'
+                msg: 'Home'
             }
         },
         methods: {
-            beforeEnter(el) {
-                TweenMax.set(el, { opacity: 0, y: 150 })
-            },
             enter(el, done) {
-                TweenMax.to(el, 2, { opacity: 1, y: 0, onComplete: done })
+                TweenMax.to(el, 0.5, { opacity: 1, y: 0, rotation: 360, onComplete: done })
             },
             leave(el, done) {
-                TweenMax.to(el, 2, { opacity: 0, y: 50, onComplete: done })
+                TweenMax.to(el, 0.5, { opacity: 0, y: 50, onComplete: done })
             }
         }
     }

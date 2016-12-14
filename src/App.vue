@@ -1,13 +1,10 @@
+//
+// App.vue
+
 <template>
     <div id="app">
         <header-component></header-component>
-        <transition
-            @enter="enter"
-            @leave="leave"
-            :css="false"
-            mode="out-in"
-            appear
-        >
+        <transition @enter="enter" @leave="leave" :css="false" mode="out-in" appear>
             <router-view ref="page"></router-view>
         </transition>
     </div>
@@ -16,12 +13,16 @@
 <script>
 
 import { TweenMax } from 'gsap'
+
+import store from './data/vuex/store'
 import HeaderComponent from './components/common/Header'
 
 export default {
     name: 'app',
+    store,
     methods: {
         enter(el, done) {
+            store.commit('increment')
             if (this.$refs.page.enter) this.$refs.page.enter(el, done)
             else TweenMax.to(el, 0.5, { opacity: 1, y: 0, onComplete: done })
         },

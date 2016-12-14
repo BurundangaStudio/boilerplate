@@ -1,3 +1,6 @@
+//
+//  About.vue
+
 <template>
     <div class="about" id="about">
         <h1>{{ msg }}</h1>
@@ -9,7 +12,7 @@
         name: 'about',
         data() {
             return {
-                msg: 'This is the about section'
+                msg: 'About'
             }
         }
     }
@@ -18,9 +21,9 @@
 <style lang="scss" scoped>
     .about {
         opacity: 0;
-        transform: translateY(150px);
-        -webkit-transform: translateY(150px);
-        -moz-transform: translateY(150px);
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
         h1 {
             color:red;
         }

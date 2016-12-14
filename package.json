@@ -14,7 +14,8 @@
     "node-sass": "^4.0.0",
     "sass-loader": "^4.0.2",
     "vue": "^2.1.0",
-    "vue-router": "^2.1.1"
+    "vue-router": "^2.1.1",
+    "vuex": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

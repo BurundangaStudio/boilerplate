@@ -19,11 +19,14 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
-    // Keep calm with semicolons, commas, consoles, and indent bix
+    // Keep calm a little bit buddy, go with the flow...
     'semi': 0,
     'comma-dangle': 0,
     'no-console': 0,
     'indent': [ 0, 0],
+    'no-plusplus': 0,
+    'no-param-reassign': 0,
+    'no-return-assign': 0,
     // extra
     'import/extensions': ['error', 'always', {
       'js': 'never',
