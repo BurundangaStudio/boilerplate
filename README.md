@@ -1,16 +1,23 @@
-# vue-2-boilerplate
+# Vue 2 simple website (V1.0)
 
-> Vue 2.0 boilerplate
+Vue 2 most simple website with routes, transitions, http requests and vuex.
 
-## Build Setup
+### Technologies
 
-``` bash
-# install dependencies
-npm install
+* Vue 2.1
+* Vuex 2.0
+* VueRouter 2.1.1
+* VueResource 1.0.3
+* SCSS
+* GSAP - TweenMax
+* Webpack
+* ES2015 | ES6
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Usage
 
-# build for production with minification
-npm run build
-```
+`npm install` +
+`npm run dev`
+
+### Production
+
+`npm run build`
