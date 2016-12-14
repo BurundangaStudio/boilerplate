@@ -9,7 +9,7 @@
             mode="out-in"
             appear
         >
-            <router-view></router-view>
+            <router-view :enter="enterVal"></router-view>
         </transition>
     </div>
 </template>
@@ -21,20 +21,27 @@ import HeaderComponent from './components/common/Header'
 
 export default {
     name: 'app',
-    components: {
-        HeaderComponent
+    data() {
+        return {
+            enterVal: true
+        }
     },
     methods: {
         beforeEnter(el) {
             TweenMax.set(el, { opacity: 0, y: 50 })
         },
         enter(el, done) {
+            console.log(el)
+            this.enterVal = true
             TweenMax.to(el, 0.5, { opacity: 1, y: 0, onComplete: () => { done() } })
         },
         leave(el, done) {
             TweenMax.to(el, 0.5, { opacity: 0, y: 50, onComplete: () => { done() } })
         }
-    }
+    },
+    components: {
+        HeaderComponent
+    },
 }
 
 </script>

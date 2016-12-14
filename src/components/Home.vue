@@ -8,12 +8,13 @@
 
     export default {
         name: 'home',
+        props: {
+            enter: Boolean
+        },
         data() {
             return {
                 msg: 'This is the home section'
             }
-        },
-        methods: {
         }
     }
 

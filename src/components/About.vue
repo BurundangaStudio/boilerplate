@@ -11,22 +11,6 @@
             return {
                 msg: 'This is the about section'
             }
-        },
-        mounted() {
-        },
-        methods: {
-            // enterTransition(el, done) {
-            //     console.log('entro about')
-            //     setTimeout(() => {
-            //         done
-            //     }, 2500)
-            // },
-            // leaveTransition(el, done) {
-            //     console.log('salgo about')
-            //     setTimeout(() => {
-            //         done
-            //     }, 2500)
-            // }
         }
     }
 </script>
