@@ -12,6 +12,7 @@ const routes = [
         component: App,
         children: [
             { path: '/', component: Home },
+            { path: '/home', component: Home },
             { path: '/about', component: About },
             { path: '/contact', component: Contact }
         ]

@@ -3,8 +3,9 @@
 
 <template>
     <div id="app">
+        <a href="https://vuejs.org/" target="_blank"><img class="vue-icon" src="./assets/img/logo.png" alt="Vue icon" /></a>
         <header-component></header-component>
-        <transition @enter="enter" @leave="leave" :css="false" mode="out-in" appear>
+        <transition name="transition" @enter="enter" @leave="leave" :css="false" mode="out-in" appear>
             <router-view ref="page"></router-view>
         </transition>
     </div>
@@ -38,12 +39,22 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     margin-top: 40px;
+}
+.vue-icon {
+    width: 20px;
+    margin-bottom:10px;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0
 }
 </style>

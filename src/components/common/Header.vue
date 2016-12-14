@@ -6,7 +6,7 @@
         <ul>
             <li>
                 <p>
-                    Pages Visited: {{ pagesVisited }} - <span @click="resetCounter">Reset</span>
+                    Pages Visited: {{ pagesVisited }} - <span @click="resetCounter">Reset</span> (Vuex)
                 </p>
             </li>
             <br />
@@ -25,7 +25,7 @@
         data() {
             return {
                 links: [
-                    { path: '/', name: 'Home' },
+                    { path: '/home', name: 'Home' },
                     { path: '/about', name: 'About' },
                     { path: '/contact', name: 'Contact' }
                 ]
