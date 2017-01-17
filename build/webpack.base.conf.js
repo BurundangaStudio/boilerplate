@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
@@ -32,6 +33,11 @@ module.exports = {
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
+  plugins: [
+     new CopyWebpackPlugin([
+         {from: 'src/assets/img/', to: 'img/'},
+    ]),
+  ],
   module: {
     preLoaders: [
       {
