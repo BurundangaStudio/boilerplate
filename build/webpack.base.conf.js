@@ -34,9 +34,9 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   plugins: [
-     new CopyWebpackPlugin([
-         {from: 'src/assets/img/', to: 'img/'},
-    ]),
+      new CopyWebpackPlugin([
+          {from: 'src/assets/img/', to: 'img/'},
+     ]),
   ],
   module: {
     preLoaders: [
