@@ -27,6 +27,8 @@ module.exports = {
     'no-plusplus': 0,
     'no-param-reassign': 0,
     'no-return-assign': 0,
+    'global-require': 0,
+    'import/no-dynamic-require': 0,
     // extra
     'import/extensions': ['error', 'always', {
       'js': 'never',
