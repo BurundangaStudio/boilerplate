@@ -2,19 +2,25 @@
 // routes.js
 
 import App from './../App'
-import Home from './../components/Home'
-import About from './../components/About'
-import Contact from './../components/Contact'
 
 const routes = [
     {
         path: '/',
         component: App,
         children: [
-            { path: '/', component: Home },
-            { path: '/home', component: Home },
-            { path: '/about', component: About },
-            { path: '/contact', component: Contact }
+            { path: '/', redirect: '/home' },
+            { path: '/home',
+              component: (resolve) => {
+                require(['./../components/Home.vue'], resolve);
+            } },
+            { path: '/about',
+              component: (resolve) => {
+                require(['./../components/About.vue'], resolve);
+            } },
+            { path: '/contact',
+              component: (resolve) => {
+                require(['./../components/Contact'], resolve);
+            } }
         ]
     }
 ]
