@@ -11,15 +11,15 @@ const routes = [
             { path: '/', redirect: '/home' },
             { path: '/home',
               component: (resolve) => {
-                require(['./../components/Home.vue'], resolve);
+                require(['./../components/Home.vue'], resolve)
             } },
             { path: '/about',
               component: (resolve) => {
-                require(['./../components/About.vue'], resolve);
+                require(['./../components/About.vue'], resolve)
             } },
             { path: '/contact',
               component: (resolve) => {
-                require(['./../components/Contact'], resolve);
+                require(['./../components/Contact'], resolve)
             } }
         ]
     }

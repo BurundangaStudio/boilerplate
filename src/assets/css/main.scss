@@ -1,3 +1,9 @@
+//
 // main.scss
 
-$font-family: 'HelveticaLTStd-Roman', sans-serif;
+@import "variables";
+@import "normalize";
+
+body, html {
+    font-family: $font-family;
+}

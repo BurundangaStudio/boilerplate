@@ -2,7 +2,7 @@
 // App.vue
 
 <template>
-    <div id="app">
+    <div id="web">
         <a href="https://vuejs.org/" target="_blank"><img class="vue-icon" src="./assets/img/logo.png" alt="Vue icon" /></a>
         <header-component></header-component>
         <transition name="transition" @enter="enter" @leave="leave" :css="false" mode="out-in" appear>
@@ -15,12 +15,16 @@
 
 import { TweenMax } from 'gsap'
 
+import Device from './config/device'
 import store from './data/vuex/store'
 import HeaderComponent from './components/common/Header'
 
 export default {
-    name: 'app',
+    name: 'web',
     store,
+    mounted() {
+        Device.setDevice()
+    },
     methods: {
         enter(el, done) {
             store.commit('increment')
@@ -40,22 +44,25 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~assets/css/main";
-#app {
-    font-family: $font-family;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    margin-top: 40px;
-}
-.vue-icon {
-    width: 20px;
-    margin-bottom:10px;
-}
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-}
-.fade-enter, .fade-leave-active {
-    opacity: 0
-}
+
+    @import "~assets/css/variables";
+
+    #web {
+        font-family: $font-family;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .vue-icon {
+        width: 20px;
+        margin-bottom:10px;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+
 </style>
