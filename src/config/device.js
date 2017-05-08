@@ -87,7 +87,7 @@ const Device = {
         this.size.s = (window.innerWidth < 768)
         this.size.m = (window.innerWidth < 1200 && !this.size.s)
         this.size.l = (window.innerWidth < 1600 && !this.size.m)
-        this.size.xl = (window.innerWidth > 1600 !this.size.l)
+        this.size.xl = (window.innerWidth > 1600 && !this.size.l)
     },
     checkMobile() {
         if (((window.innerWidth <= 640) && (this.isApple() || this.isAndroid())) || /iPhone/i.test(window.navigator.userAgent)) this.isMobile = true
