@@ -111,8 +111,8 @@ const Device = {
         this.desktop.xs = (this.isDesktop) ? (window.innerWidth < 480) : false
         this.desktop.s = (this.isDesktop && !this.desktop.xs) ? (window.innerWidth < 768) : false
         this.desktop.m = (this.isDesktop && !this.desktop.s) ? (window.innerWidth < 1280) : false
-        this.desktop.l = (this.isDesktop && !this.desktop.m) ? (window.innerWidth < 1440) : false
-        this.desktop.xl = (this.isDesktop && !this.desktop.l) ? (window.innerWidth < 1600) : false
+        this.desktop.l = (this.isDesktop && !this.desktop.m) ? (window.innerWidth < 1600) : false
+        this.desktop.xl = (this.isDesktop && !this.desktop.l) ? (window.innerWidth > 1600) : false
         this.desktop.xxl = (this.isDesktop && !this.desktop.xl)
     },
     checkBrowser() {
